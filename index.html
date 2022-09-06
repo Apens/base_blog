@@ -10,8 +10,57 @@
     <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <header></header>
-    <main></main>
+    <header>
+        <nav>
+            <h2> Base Blog</h2>
+            <ul>
+                <li>item#1</li>
+                <li>item#2</li>
+                <li>item#3</li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="sign_user">
+            <div id="userSignUp">
+                <form id="userRegister" onsubmit="registerUser(event)">
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div>
+                        <label for="username">Username</label>
+                        <input type="text" name="username">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password">
+                    </div>
+                    <input type="submit">
+                </form>
+                vous avez deja un compte ?
+                <button id="signupButton">connectez-vous</button>
+
+            </div>
+            <div id="userSignIn">
+                <form id="userLogin" onsubmit="loginUser(event)">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="text" name="password">
+                    </div>
+                    <input type="submit" >
+                </form>
+                Pas encore de compte ?
+                <button id="signInButton">Creez un compte</button>
+            </div>
+        </div>
+    </main>
     <footer></footer>
 </body>
 </html>

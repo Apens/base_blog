@@ -25,7 +25,7 @@ function createUser($username, $email, $password, $role= null){
     } else {
         $role = "USER";
     }
-    var_dump($role);
+//    var_dump($role);
 
     $reqSql = "INSERT INTO user(username, email, password, role ) 
                 VALUE(:username, :email, :password, :role )";
@@ -36,6 +36,9 @@ function createUser($username, $email, $password, $role= null){
         ':password' => $password,
         ':role'=> $role
     ]);
+
+    return ["insert_status" => 200];
+
 
 }
 
@@ -81,8 +84,8 @@ function userLogin($email, $password){
 
 }
 
-function updateUser($userID, $email, $password, $role){
-    $reqSql ="UPDATE user SET username='$email', password='$password', role='$role' WHERE id='$userID'";
+function updateUser($username, $email, $password, $role, $userID){
+    $reqSql ="UPDATE user SET username='$username', email='$email', password='$password', role='$role' WHERE id='$userID'";
     queryMysql($reqSql);
 }
 
